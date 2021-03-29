@@ -12,7 +12,7 @@
 	<artifactId>usuarios</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>usuarios</name>
-	<description>Microservicio de Usuarios para Laboratior de Diseño de Aplicaciones en la Nube</description>
+	<description>Microservicio de Usuarios para Laboratioro de Diseño de Aplicaciones en la Nube</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
