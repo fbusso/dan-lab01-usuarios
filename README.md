@@ -37,7 +37,7 @@ Ejecutar el Maven Goal
 
 Para crear un archivo de migración se siguen las siguientes convenciones de nombres:
 
-1. **Prefijo:** por defecto debe ser `v`.
+1. **Prefijo:** por defecto debe ser `V`.
 2. **Version:** debe ser única. Puede contener tantos `.` y `_` como se quiera.
 3. **Separador:** por defecto debe ser `__` (Dos guiones bajos).
 4. **Descripcion:** texto separado por tantos `.` o `_` como se quiera.
