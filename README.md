@@ -59,7 +59,7 @@ Luego de crear un archivo de migración, se debe ejecutar el Maven Goal
 
 ## Deshacer una migración
 
-Para deshacer una migración, se debe eliminar la fila correspondiente a esa versión de la tabla `flyway_schema_history` .
+Para deshacer una migración, se debe eliminar la fila correspondiente a esa versión de la tabla `flyway_schema_history`.
 
 ## Información adicional
 
