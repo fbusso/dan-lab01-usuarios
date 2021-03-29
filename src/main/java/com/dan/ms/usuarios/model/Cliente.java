@@ -1,6 +1,7 @@
 package com.dan.ms.usuarios.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -9,12 +10,27 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotBlank
+    @Size(min = 1, max = 100)
     private String razonSocial;
+
+    @NotBlank
+    @Pattern(regexp = "[0-9]+")
+    @Size(min = 11, max = 11)
     private String cuit;
+
+    @NotBlank
+    @Email
     private String mail;
+
+    @NotBlank
+    @PositiveOrZero
     private BigDecimal maximoCuentaCorriente;
+
     private Boolean habilitadoOnline;
 
+    @NotEmpty
     @OneToOne
     private Usuario usuario;
 

@@ -2,6 +2,7 @@ package com.dan.ms.usuarios.controller;
 
 import com.dan.ms.usuarios.model.Usuario;
 import com.dan.ms.usuarios.service.UsuarioService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,8 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping()
+    @Operation(summary = "Obtener la lista completa de usuarios")
+    @GetMapping("/all")
     ResponseEntity<List<Usuario>> obtenerTodos() {
         return ResponseEntity.ok(usuarioService.obtenerTodos());
     }

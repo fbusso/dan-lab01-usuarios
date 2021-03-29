@@ -1,6 +1,9 @@
 package com.dan.ms.usuarios.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Empleado {
@@ -8,9 +11,13 @@ public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotBlank
+    @Email
     private String email;
 
     @OneToOne
+    @NotEmpty
     private Usuario usuario;
 
     public Empleado() {

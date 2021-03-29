@@ -4,6 +4,9 @@ package com.dan.ms.usuarios.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Usuario {
@@ -11,10 +14,17 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotBlank
+    @Size(min = 6, max = 20)
     private String usuario;
+
+    @NotBlank
+    @Size(min = 8, max = 50)
     private String password;
 
     @ManyToOne
+    @NotEmpty
     private TipoUsuario tipoUsuario;
 
     public Usuario() {

@@ -1,6 +1,7 @@
 package com.dan.ms.usuarios.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 public class Obra {
@@ -8,15 +9,35 @@ public class Obra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotBlank
+    @Size(min = 1, max = 255)
     private String descripcion;
+
+    @NotBlank
+    @Size(min = 1, max = 100)
     private String direccion;
+
+    @NotBlank
+    @DecimalMin("-90.000000")
+    @DecimalMax("90.000000")
     private Double latitud;
+
+    @NotBlank
+    @DecimalMin("-180.000000")
+    @DecimalMax("180.000000")
     private Double longitud;
+
+    @NotBlank
+    @Positive
+    @Size(min = 1)
     private Integer superficie;
 
+    @NotBlank
     @ManyToOne
     private TipoObra tipoObra;
 
+    @NotBlank
     @ManyToOne
     private Cliente cliente;
 
