@@ -26,11 +26,6 @@ public class ClienteController {
         return new ResponseEntity<>(clienteService.createCliente(cliente), HttpStatus.CREATED);
     }
 
-    @GetMapping()
-    public ResponseEntity<List<Cliente>> obtenerTodos() {
-        return ResponseEntity.ok(clienteService.obtenerTodos());
-    }
-
     @GetMapping("/cuit/{cuit}")
     public ResponseEntity<Cliente> obtenerPorCuit(@PathVariable String cuit) {
         return ResponseEntity.of(clienteService.encontrarPorCuit(cuit));
